@@ -3,6 +3,15 @@
 <head>
   <title>purploid</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="purploid - software developer & cyber security enthusiast">
+  <meta name="keywords" content="purploid, software developer, cyber security, programming, web development">
+  <meta name="author" content="purploid">
+  <meta property="og:title" content="purploid - software developer">
+  <meta property="og:description" content="purploid - software developer & cyber security enthusiast">
+  <meta property="og:url" content="https://purploid.xyz">
+  <meta name="theme-color" content="#13111C">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
     * { cursor: none; }
@@ -155,6 +164,30 @@
     .text-2xl::selection {
       background: rgba(166, 0, 255, 0.283);
     }
+    .qual-img {
+      width: 240px;
+      height: 150px;
+      border-radius: 12px;
+      border: 2px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+    }
+    .qual-img-2 {
+      width: 200px;
+      height: 170px;
+      border-radius: 12px;
+      border: 2px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.3s ease;
+    }
+    .qual-img:hover {
+      transform: translateY(-2px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+    }
+    .qual-img-2:hover {
+      transform: translateY(-2px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+    }
   </style>
 </head>
 <body>
@@ -285,6 +318,29 @@
           <div class="skill-tag">azure</div>
           <div class="skill-tag">google cloud</div>
         </div>
+      </div>
+
+      <div class="section">
+        <h2 class="text-2xl font-bold mb-4">projects</h2>
+        <div class="flex flex-wrap gap-3 justify-center">
+          <a href="https://quill.purploid.xyz" target="_blank" class="skill-tag hover:underline">quill.purploid.xyz</a>
+          <a href="https://refind.purploid.xyz" target="_blank" class="skill-tag hover:underline">refind.purploid.xyz</a>
+        </div>
+      </div>
+
+      <script>
+        function qual() {
+          window.open('https://www.cloudskillsboost.google/public_profiles/d00d9b85-d2e9-411f-8659-3866b2b56089');
+        }
+      </script>
+
+        <div class="section">
+          <h2 class="text-2xl font-bold mb-4">certifications</h2>
+          <div class="flex gap-3 justify-center">
+            <img class="qual-img-2" onclick="qual();" src="https://cdn.qwiklabs.com/xRejIPM4k6VgI8%2B%2B2Nz5bFHFx8PwK0nn9oQofkJOsS4%3D"></img>
+            <img class="qual-img" onclick="qual();" src="https://cdn.qwiklabs.com/TbOoOcpQdNxRawSvSE3K5cbakxBmki8F%2FgjwN6yKY98%3D"></img>
+            <img class="qual-img" onclick="qual();" src="https://cdn.qwiklabs.com/SOUHCWvev6HmfC5QztXJd%2BCkSK8%2B3WGWg%2BF%2Fww%2FfqXA%3D"></img>
+          </div>
       </div>
     </div>
   </div>

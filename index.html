@@ -1,3 +1,10 @@
+<!--  
+  purploid - software developer & cyber security enthusiast
+  https://purploid.xyz
+  
+  THIS IS A TEMPLATE, I DID NOT CODE THIS FROM SCRATCH
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +19,14 @@
   <meta property="og:description" content="purploid - software developer & cyber security enthusiast">
   <meta property="og:url" content="https://purploid.xyz">
   <meta name="theme-color" content="#13111C">
+  <link rel="icon" href="logo.ico" type="image/x-icon">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@900&display=swap');
-    * { cursor: none; }
     
     :root {
-      --accent: #bb63f1;
-      --accent-light: #ac5cf6;
-      --accent-dark: #993bf6;
+      --accent: #333333;
+      --accent-light: #474747;
+      --accent-dark: #272727;
     }
 
     body {
@@ -29,29 +36,6 @@
       font-family: 'Space Grotesk', sans-serif;
       color: white;
       overflow-x: hidden;
-    }
-
-    .cursor {
-      width: 24px;
-      height: 24px;
-      border: 2px solid var(--accent);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9999;
-      mix-blend-mode: difference;
-    }
-
-    .cursor-blur {
-      width: 150px;
-      height: 150px;
-      background: rgba(99, 102, 241, 0.15);
-      border-radius: 50%;
-      position: fixed;
-      pointer-events: none;
-      z-index: 9998;
-      filter: blur(30px);
-      mix-blend-mode: screen;
     }
 
     .bg-animate {
@@ -70,18 +54,6 @@
       transform-origin: center;
     }
 
-    @keyframes float {
-      0%, 100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-      }
-      33% {
-        transform: translate(var(--translate-x), var(--translate-y)) scale(1.1) rotate(120deg);
-      }
-      66% {
-        transform: translate(calc(var(--translate-x) * -0.5), calc(var(--translate-y) * -0.5)) scale(0.9) rotate(240deg);
-      }
-    }
-
     .site-title {
       font-family: 'Unbounded', sans-serif;
       text-transform: lowercase;
@@ -95,7 +67,7 @@
       animation: gradient 8s ease infinite;
     }
     .site-title::selection {
-      background: rgba(166, 0, 255, 0.283);
+      background: rgba(44, 44, 44, 0.283);
     }
 
     @keyframes gradient {
@@ -108,39 +80,39 @@
       margin: 0 auto;
       padding: 2rem;
       padding-bottom: 0.5rem;
-      background: rgba(99, 102, 241, 0.02);
+      background: rgba(31, 31, 31, 0.02);
       border-radius: 24px;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(99, 102, 241, 0.1);
-      box-shadow: 0 0 40px rgba(99, 102, 241, 0.05);
+      border: 1px solid rgba(22, 22, 22, 0.1);
+      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
     }
 
     .content-container::selection {
-      background: rgba(166, 0, 255, 0.283);
+      background: rgba(255, 255, 255, 0.283);
     }
 
     .section {
       text-align: center;
       padding: 2rem;
-      background: rgba(99, 102, 241, 0.03);
+      background: rgba(43, 43, 43, 0.03);
       border-radius: 16px;
       margin-bottom: 1.5rem;
-      border: 1px solid rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(19, 19, 19, 0.08);
       transition: all 0.3s ease;
     }
     
     .section::selection {
-      background: rgba(166, 0, 255, 0.283);
+      background: rgba(24, 24, 24, 0.283);
     }
 
     .section:hover {
-      border-color: rgba(99, 102, 241, 0.2);
+      border-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-2px);
     }
 
     .skill-tag {
-      background: rgba(99, 102, 241, 0.1);
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      background: rgba(27, 27, 27, 0.1);
+      border: 1px solid rgba(31, 31, 31, 0.2);
       padding: 0.5rem 1rem;
       border-radius: 8px;
       font-weight: 500;
@@ -149,94 +121,66 @@
     }
 
     .skill-tag::selection {
-      background: rgba(166, 0, 255, 0.283);
+      background: rgba(24, 24, 24, 0.283);
     }
 
     .skill-tag:hover {
       transform: translateY(-2px);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+      border-color: rgba(39, 39, 39, 0.4);
+      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
     }
 
     .text-lg::selection {
-      background: rgba(166, 0, 255, 0.283);
+      background: rgba(31, 31, 31, 0.283);
     }
     .text-2xl::selection {
-      background: rgba(166, 0, 255, 0.283);
+      background: rgba(36, 36, 36, 0.283);
     }
     .qual-img {
       width: 240px;
       height: 150px;
       border-radius: 12px;
-      border: 2px solid rgba(99, 102, 241, 0.2);
+      border: 2px solid rgba(43, 43, 43, 0.2);
       transition: all 0.3s ease;
     }
     .qual-img-2 {
       width: 200px;
       height: 170px;
       border-radius: 12px;
-      border: 2px solid rgba(99, 102, 241, 0.2);
+      border: 2px solid rgba(32, 32, 32, 0.2);
       transition: all 0.3s ease;
     }
     .qual-img:hover {
       transform: translateY(-2px);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+      border-color: rgba(49, 49, 49, 0.4);
+      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
     }
     .qual-img-2:hover {
       transform: translateY(-2px);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+      border-color: rgba(48, 48, 48, 0.4);
+      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
     }
   </style>
 </head>
 <body>
-  <div class="cursor"></div>
-  <div class="cursor-blur"></div>
   <div class="bg-animate"></div>
 
-  <audio id="bg-music" src="meme.mp3" loop></audio>
-  <button id="music-toggle" class="fixed top-4 right-4 z-50 text-white px-4 py-2 rounded shadow transition border border-purple-700 hover:border-purple-800" style="cursor: none;"></button>
-    Pause Music
-  </button>
+  <audio id="bg-music" src="in a haze.mp3" loop ></audio>
   <script>
-    // Web Audio API for volume boost
+
     const music = document.getElementById('bg-music');
     const toggleBtn = document.getElementById('music-toggle');
     let playing = true;
 
-    // Setup Web Audio API
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     const audioCtx = new AudioContext();
     const source = audioCtx.createMediaElementSource(music);
     const gainNode = audioCtx.createGain();
-    gainNode.gain.value = 0.2; // 500%
+    gainNode.gain.value = 0.01;
 
     source.connect(gainNode).connect(audioCtx.destination);
 
-    // Play music on load
     music.play();
-
-    toggleBtn.textContent = 'Pause Music';
-
-    toggleBtn.addEventListener('click', () => {
-      if (!playing) {
-        audioCtx.resume();
-        music.play();
-        toggleBtn.textContent = 'Pause Music';
-        playing = true;
-      } else {
-        music.pause();
-        toggleBtn.textContent = 'Play Music';
-        playing = false;
-      }
-    });
-
-    window.addEventListener('blur', () => { 
-      music.pause(); 
-      toggleBtn.textContent = 'Play Music'; 
-      playing = false; 
-    });
   </script>
 
   <script>
@@ -283,15 +227,6 @@
       blobs.push(blob);
       background.appendChild(blob);
     }
-
-    document.addEventListener('mousemove', (e) => {
-      requestAnimationFrame(() => {
-        const cursor = document.querySelector('.cursor');
-        const cursorBlur = document.querySelector('.cursor-blur');
-        cursor.style.transform = `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
-        cursorBlur.style.transform = `translate(${e.clientX - 75}px, ${e.clientY - 75}px)`;
-      });
-    });
   </script>
 
   <div class="relative z-10 min-h-screen py-20 px-4">

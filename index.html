@@ -2,7 +2,9 @@
   purploid - software developer & cyber security enthusiast
   https://purploid.xyz
   
-  THIS IS A TEMPLATE, I DID NOT CODE THIS FROM SCRATCH
+  07/10/2025 -- THIS IS A TEMPLATE, I DID NOT CODE THIS FROM SCRATCH
+
+  11/10/2025 -- I highly modified this template
 -->
 
 <!DOCTYPE html>
@@ -32,26 +34,10 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(135deg, #0a0a0a 0%, #13111C 100%);
+      background: #0e0e0e;
       font-family: 'Space Grotesk', sans-serif;
       color: white;
       overflow-x: hidden;
-    }
-
-    .bg-animate {
-      position: fixed;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, #13111C 0%, #08070B 100%);
-    }
-
-    .blob {
-      position: absolute;
-      filter: blur(5px);
-      opacity: 0.05;
-      mix-blend-mode: screen;
-      animation: float var(--duration) ease-in-out infinite;
-      animation-delay: var(--delay);
-      transform-origin: center;
     }
 
     .site-title {
@@ -66,6 +52,7 @@
       background-size: 300% 300%;
       animation: gradient 8s ease infinite;
     }
+
     .site-title::selection {
       background: rgba(44, 44, 44, 0.283);
     }
@@ -75,196 +62,53 @@
       50% { background-position: 100% 50%; }
     }
 
-    .content-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-      padding-bottom: 0.5rem;
-      background: rgba(31, 31, 31, 0.02);
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(22, 22, 22, 0.1);
-      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
-    }
-
-    .content-container::selection {
-      background: rgba(255, 255, 255, 0.283);
-    }
-
-    .section {
-      text-align: center;
-      padding: 2rem;
-      background: rgba(43, 43, 43, 0.03);
-      border-radius: 16px;
-      margin-bottom: 1.5rem;
-      border: 1px solid rgba(19, 19, 19, 0.08);
-      transition: all 0.3s ease;
-    }
-    
-    .section::selection {
-      background: rgba(24, 24, 24, 0.283);
-    }
-
-    .section:hover {
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .skill-tag {
-      background: rgba(27, 27, 27, 0.1);
-      border: 1px solid rgba(31, 31, 31, 0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-    }
-
-    .skill-tag::selection {
-      background: rgba(24, 24, 24, 0.283);
-    }
-
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      border-color: rgba(39, 39, 39, 0.4);
-      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
-    }
-
-    .text-lg::selection {
-      background: rgba(31, 31, 31, 0.283);
-    }
-    .text-2xl::selection {
-      background: rgba(36, 36, 36, 0.283);
-    }
-    .qual-img {
-      width: 240px;
-      height: 150px;
-      border-radius: 12px;
-      border: 2px solid rgba(43, 43, 43, 0.2);
-      transition: all 0.3s ease;
-    }
-    .qual-img-2 {
-      width: 200px;
-      height: 170px;
-      border-radius: 12px;
-      border: 2px solid rgba(32, 32, 32, 0.2);
-      transition: all 0.3s ease;
-    }
-    .qual-img:hover {
-      transform: translateY(-2px);
-      border-color: rgba(49, 49, 49, 0.4);
-      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
-    }
-    .qual-img-2:hover {
-      transform: translateY(-2px);
-      border-color: rgba(48, 48, 48, 0.4);
-      box-shadow: 0 0 20px rgba(236, 236, 236, 0.1);
-    }
   </style>
 </head>
 <body>
-  <div class="bg-animate"></div>
-
   <audio id="bg-music" src="in a haze.mp3" loop ></audio>
-  <script>
 
-    const music = document.getElementById('bg-music');
-    const toggleBtn = document.getElementById('music-toggle');
-    let playing = true;
-
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    const audioCtx = new AudioContext();
-    const source = audioCtx.createMediaElementSource(music);
-    const gainNode = audioCtx.createGain();
-    gainNode.gain.value = 0.01;
-
-    source.connect(gainNode).connect(audioCtx.destination);
-
-    music.play();
-  </script>
+  <div id="openingDiv" class="fixed inset-0 bg-stone-900 z-50">
+    <button id="enter" class="absolute inset-0 w-full h-full flex items-center justify-center bg-stone-900 text-white">
+      Click to Enter
+    </button>
+  </div>
 
   <script>
-    function createBlob(existingBlobs) {
-      const blob = document.createElement('div');
-      blob.className = 'blob';
-      
-      const size = Math.random() * 400 + 300;
-      let position = {
-        left: Math.random() * window.innerWidth,
-        top: Math.random() * window.innerHeight
-      };
-      
-      const translateX = Math.random() * 60 - 30;
-      const translateY = Math.random() * 60 - 30;
-      const duration = Math.random() * 10 + 15;
-      const delay = Math.random() * -20;
-      
-      const radius1 = Math.random() * 20 + 40;
-      const radius2 = Math.random() * 20 + 40;
-      const radius3 = Math.random() * 20 + 40;
-      const radius4 = Math.random() * 20 + 40;
-      
-      blob.style.cssText = `
-        width: ${size}px;
-        height: ${size}px;
-        background: ${Math.random() > 0.5 ? 'var(--accent)' : 'var(--accent-light)'};
-        left: ${position.left}px;
-        top: ${position.top}px;
-        --translate-x: ${translateX}px;
-        --translate-y: ${translateY}px;
-        --duration: ${duration}s;
-        --delay: ${delay}s;
-        border-radius: ${radius1}% ${radius2}% ${radius3}% ${radius4}% / ${radius4}% ${radius3}% ${radius2}% ${radius1}%;
-      `;
-      
-      return blob;
-    }
+    document.getElementById('enter').addEventListener('click', function() {
+        document.getElementById('openingDiv').classList.add('hidden');
+        document.getElementById('content').classList.remove('hidden');
+        
+        const music = document.getElementById('bg-music');
+        const toggleBtn = document.getElementById('music-toggle');
+        let playing = true;
 
-    const background = document.querySelector('.bg-animate');
-    const blobs = [];
-    for (let i = 0; i < 5; i++) {
-      const blob = createBlob(blobs);
-      blobs.push(blob);
-      background.appendChild(blob);
-    }
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const audioCtx = new AudioContext();
+        const source = audioCtx.createMediaElementSource(music);
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.value = 0.01;
+
+        source.connect(gainNode).connect(audioCtx.destination);
+
+        music.play();
+    });
   </script>
 
-  <div class="relative z-10 min-h-screen py-20 px-4">
-    <div class="flex flex-col items-center mb-12">
-      <div class="flex items-center gap-6 mb-4">
-        <img src="black-cat.gif" alt="Logo" class="w-24 h-24 rounded-full border-0 border-white shadow-lg object-cover">
-        <div class="flex flex-col">
-          <h1 class="site-title text-6xl md:text-7xl">purploid</h1>
-          <p class="opacity-70 text-base mt-1">software developer & cyber security</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="content-container">
-      <div class="section">
-        <h2 class="text-2xl font-bold mb-4">about me</h2>
-        <p class="text-lg opacity-80 leading-relaxed">
-          i'm a 17-year-old programmer with 7 years of coding experience, 3 of which was doing website development. i do youtube sometimes. i'm a car enthusiast (vw my beloved)..
-        </p>
-      </div>
-
-      <div class="section">
-        <h2 class="text-2xl font-bold mb-4">skills</h2>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <div class="skill-tag">javascript</div>
-          <div class="skill-tag">typescript</div>
-          <div class="skill-tag">python</div>
-          <div class="skill-tag">git</div>
-          <div class="skill-tag">azure</div>
-          <div class="skill-tag">google cloud</div>
-        </div>
-      </div>
-
-      <div class="section">
-        <h2 class="text-2xl font-bold mb-4">projects</h2>
-        <div class="flex flex-wrap gap-3 justify-center">
-          <a href="https://quill.purploid.xyz" target="_blank" class="skill-tag hover:underline">quill.purploid.xyz</a>
-          <a href="https://refind.purploid.xyz" target="_blank" class="skill-tag hover:underline">refind.purploid.xyz</a>
+  <div id="content" class="hidden">
+    <div class="relative z-10 min-h-screen flex items-center justify-center py-20 px-4s">
+      <div class="w-full max-w-3xl text-center">
+        <div class="flex flex-col items-center mb-12">
+          <div class="flex items-center gap-6 mb-4 justify-center"></div>
+            <img src="black-cat.gif" alt="Logo" class="w-24 h-24 rounded-full border-0 border-white shadow-lg object-cover">
+            <div class="flex flex-col items-center">
+              <h1 class="site-title text-6xl md:text-7xl">purploid</h1>
+              <p class="opacity-70 text-base mt-1">software developer & cyber security</p>
+            </div>
+            <div class="flex flex-wrap gap-3 justify-center">
+              <a href="https://quill.purploid.xyz" target="_blank" class="skill-tag hover:underline">quill</a>
+              <a href="https://refind.purploid.xyz" target="_blank" class="skill-tag hover:underline">refind</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
